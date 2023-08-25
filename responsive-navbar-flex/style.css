@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    /* umpetin konten yang bablas ke kanan biar ngak bisa di scroll ke kanan  */
+    overflow-x: hidden;
+}
+
+nav{
+    background-color: rgb(180, 78, 232);
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+    color: rgb(234, 192, 255);
+}
+
+nav .logo{
+    font-family: "Pacifico", cursive;
+    letter-spacing: 3px;
+}
+
+nav ul{
+    display:  flex;
+    list-style: none;
+    /* lebarnya adalah 40% dari lebar nav  */
+    width: 40%;
+    justify-content: space-between;
+}
+ul li a{
+    color: rgb(234, 192, 255);
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+nav ul li a:hover {
+    color: rgb(250, 240, 255);
+}
+
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    /* background-color: black; */
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span{
+    background-color: rgb(234, 192, 255);
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* hamburger menu animation  */
+/* cari span yang ada di menu-toggle yang dia tu anak ke 2  */
+.menu-toggle span:nth-child(2){
+    /* mindahin poros untuk sumber berputar  */
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+/* jika input checkbox di check maka cari saudaranya yang merupakan span anak ke 2  */
+.menu-toggle input:checked ~ span:nth-child(2){
+    /* background-color: rebeccapurple; */
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+
+/* responsive  */
+/* ukuran tablet  */
+/* ketika ukurannya 768px kebawah maka lakukan css di dalamnya  */
+@media screen and (max-width: 768px) {
+    nav ul {
+      width: 50%;
+    }
+}
+
+/* mobile  */
+@media screen and (max-width: 576px){
+    .menu-toggle{
+        display: flex; 
+    }
+    nav ul{
+        /* menghilangkan segala yang ada di dalam ul  */
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 80%;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(180, 78, 232);
+        z-index: -999;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+    
+
+    nav ul.slide{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

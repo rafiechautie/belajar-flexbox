@@ -1,0 +1,38 @@
+.container{
+    width: 600px;
+    height: 500px;
+    border: 5px solid black;
+    margin: 30px auto;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    /* dia akan maksain setiap item dalam satu baris  */
+    /* flex-wrap: nowrap;  */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.container div{
+    /* width: 100px;
+    height: 100px; */
+    background-color: blue;
+    margin: 2px;
+    /* semuanya ukurannya 1 dan akan memenuhi container  */
+    flex: 1; 
+}
+
+/* bikin class duaa ukurannya 2 kali lipat lebih daripada yang lain */
+/* yang lain lansung ngatur sendiri ukurannya  */
+.container div.dua{
+    flex: 2;
+    align-self: center;
+}
+
+/* .satu{
+    order: 1;
+}
+.dua{
+    order: 3;
+} */

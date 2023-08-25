@@ -1,0 +1,22 @@
+css flexbox hanya dapat mengatur 1 dimensi pada saat tertentu, antara baris atau kolom. tidak bisa keduanya sekaligus.
+
+
+pada flexbox
+1. kita pasti punya wadah yang biasanya bernama container
+2. dan di dalam wadah tersebut berisi item item
+3. main axis adalah ketika kita men set elemennya sejajar secara horizontal dan menentukan urutan dari penempatan items secara horizontal
+4. cross axix untuk men set elemennya sejajar secara vertikal
+5. main size adalah lebar dr containenya
+6. cross size adalah tinggi dari containernya
+7. main start dan main end adalah awal dan akhir dari container 
+8. cross start dan cross end adalah tinggi awal dan akhir container
+
+
+1. flex direction untuk mengatur tampilan dan urutan dari setiap item
+2. flex wrap untuk mengatur ketika item yang kita punya udah ngak muat lagi dengan containernya
+3. justify content untuk mengatur rata dari itemnya. bisa rata kiri, rata kanan, tengah, dsb
+4. align items untuk mengatur kesejajaran antar item secara vertikal
+5. align content untuk mengatur kesejajaran antar item ketika itemnya lebih dari 1 baris
+6. kita bisa mengatur order dari setiap item flex
+7. flex-grow/flex digunakan untuk mengatur ukuran dari setiap item
+8. align-self digunakan untuk mengatur perilaku penjajaran sebuah item yang spesifik terhadap cross axis
